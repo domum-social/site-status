@@ -82,6 +82,14 @@ p {
   }
 }
 
+.error{
+    color: red;
+}
+
+.status-div{
+    width: 33%;
+}
+
 .status-footer {
   color: #535d6b;
   position: fixed;
