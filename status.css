@@ -1,6 +1,17 @@
+:root {
+  --bg-dark: #1C1F26;
+  --text-light: #F9FAFB;
+  --text-secondary: #A0A6B3;
+  --text-muted: #535d6b;
+  --gold: #FFD86B;
+  --gold-glow: rgba(255, 216, 107, 0.6);
+  --violet: #7D6BFF;
+  --teal: #34D1BF;
+}
+
 body {
-  background-color: #1C1F26; /* Dark Charcoal Blue */
-  color: #F9FAFB; /* Almost White */
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
@@ -8,94 +19,59 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  text-align: center;
   padding: 0 1rem;
+  text-align: center;
 }
 
 img.logo {
   width: 20vw;
   max-width: 200px;
-  height: auto;
   margin-bottom: 1rem;
-  filter: drop-shadow(0px 0px 12px #FFD86B); /* warm glow */
+  filter: drop-shadow(0px 0px 12px var(--gold));
+}
+
+h1, h2, h3 {
+  margin: 0.2em 0;
 }
 
 h1 {
-  font-size: 5vw;
+  font-size: clamp(1.8rem, 5vw, 7rem);
   font-weight: 700;
-  margin: 0.2em 0;
-  color: #FFD86B; /* Warm Golden Glow */
-  text-shadow: 0 0 20px rgba(255, 216, 107, 0.6);
+  color: var(--gold);
+  text-shadow: 0 0 20px var(--gold-glow);
 }
 
 h2 {
-  font-size: 2.5vw;
+  font-size: clamp(1.4rem, 2.5vw, 6rem);
   font-weight: 500;
-  margin: 0.3em 0;
-  color: #7D6BFF; /* Friendly Violet */
+  color: var(--violet);
 }
 
 h3 {
-  font-size: 2vw;
+  font-size: clamp(1.1rem, 2vw, 5rem);
   font-weight: 300;
-  margin: 0.5em 0;
-  color: #34D1BF; /* Teal Green for emphasis */
+  color: var(--teal);
 }
 
-p {
-  font-size: 1.1em;
+p, div {
+  font-size: clamp(1rem, 1.1vw, 2rem);
   max-width: 600px;
   line-height: 1.6;
-  color: #A0A6B3; /* Soft Gray for secondary text */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  img.logo {
-    width: 30vw;
-    max-width: 150px;
-  }
-  h1 {
-    font-size: 2.2em;
-  }
-  h2 {
-    font-size: 1.4em;
-  }
-  h3 {
-    font-size: 1.1em;
-  }
-}
+p { color: var(--text-secondary); }
 
-@media (max-width: 480px) {
-  img.logo {
-    width: 40vw;
-    max-width: 120px;
-  }
-  h1 {
-    font-size: 1.8em;
-  }
-  h2 {
-    font-size: 1.1em;
-  }
-  h3 {
-    font-size: 0.9em;
-  }
-}
 
-.error{
-    color: red;
-}
-
-.status-div{
-    width: 33%;
+.error {
+  color: red;
 }
 
 .status-footer {
-  color: #535d6b;
+  color: var(--text-muted);
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  text-align: center;
   padding: 10px;
 }
+
