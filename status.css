@@ -31,7 +31,7 @@ img.logo {
 }
 
 h1, h2, h3 {
-  margin: 0.2em 0;
+  margin: 0.2em 0.2em;
 }
 
 h1 {
@@ -55,16 +55,34 @@ h3 {
 
 p, div {
   font-size: clamp(1rem, 1.1vw, 2rem);
-  max-width: 600px;
   line-height: 1.6;
 }
 
 p { color: var(--text-secondary); }
 
+.current{
+    max-width: clamp(300px,50vw,800px);
+    padding: clamp(2px,1vw,10px);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--teal);
+}
 
-.error {
+.current.error {
+    border-color: red;  /* or var(--red) */
+}
+
+.current.error h3 {
   color: red;
 }
+
+
+.history{
+    margin-top: clamp(5px,5vw,20px);
+    max-width: clamp(300px,33vw,500px);
+}
+
+.history p { text-align: justify; }
 
 .status-footer {
   color: var(--text-muted);
